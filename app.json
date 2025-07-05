@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "fastfood",
-    "slug": "fastfood",
+    "name": "fast_food",
+    "slug": "fast_food",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
