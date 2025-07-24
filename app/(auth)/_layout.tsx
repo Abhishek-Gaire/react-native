@@ -7,7 +7,7 @@ import useAuthStore from "@/store/auth.store";
 const AuthLayout = () => {
   const {isAuthenticated} = useAuthStore();
 
-  if(!isAuthenticated) return <Redirect href=".."/>
+  if(isAuthenticated) return <Redirect href="/"/>
   return (
     <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding": "height"}>
      <ScrollView className="bg-white h-full" keyboardShouldPersistTaps="handled">

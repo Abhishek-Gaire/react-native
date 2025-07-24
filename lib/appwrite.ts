@@ -1,4 +1,4 @@
-import {Account, Avatars, Client, Databases, ID, Query} from "react-native-appwrite"
+import {Account, Avatars, Client, Databases, ID, Query,Storage} from "react-native-appwrite"
 import {CreateUserParams, SignInParams} from "@/type";
 
 export const appwriteConfig = {
@@ -6,7 +6,12 @@ export const appwriteConfig = {
   projectId: process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID!,
   platform:"com.ABSAS.foodordering",
   databaseId: "687f066f0038cff47901",
-  userCollectionId:"687f069a0002a214f0cf"
+  bucketId:"6881d541003e3d9d87f1",
+  userCollectionId:"687f069a0002a214f0cf",
+  categoriesCollectionId:"6881d0280004b5432bee",
+  menuCollectionId:"6881d26f0037bbb91ade",
+  customizationCollectionId:"6881d38e003120e07016",
+  menuCustomizationsCollectionId:"6881d447001b390be4c7"
 }
 
 export const client = new Client()
@@ -19,6 +24,7 @@ client
 export const account = new Account(client)
 export const databases = new Databases(client);
 const avatars = new Avatars(client);
+export const storage = new Storage(client)
 
 export const createUser = async({name,email,password}:CreateUserParams) => {
   try {

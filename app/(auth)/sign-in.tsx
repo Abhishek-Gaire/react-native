@@ -24,7 +24,7 @@ const SignIn = () => {
 
    try {
      await signIn({email, password})
-     router.replace("..")
+     router.replace("/")
    } catch (error:any) {
       Alert.alert("Error", error.message);
       Sentry.captureEvent(error)
